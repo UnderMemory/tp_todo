@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello in Todo !{% endblock %}
+
+{% block body %}
+
+
+        <div class="container"> 
+            <ul>
+                <li> {{ todo.title }} </li>
+                <li> Catégorie : {{ todo.category.name }} </li>
+                <br>
+                <li> Créée le {{ todo.createdAt|date('d/m/Y') }} </li>
+                <li> Modifiée le {{ todo.updatedAt|date('d/m/Y') }} </li>
+                <li> Pour le : {{ todo.dateFor|date('d/m/Y') }} </li>
+            </ul>
+
+            <hr>
+            
+            <a href=" {{ path('app_todo') }}" class=" btn btn-success"> Accueil </a>
+
+        </div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="container">
+
+
+    <div class="column justify-content-center">
+
+        <h3 class="my-5">Modifier la Todo</h3>
+
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }} my-3">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    
+            {{ form( formTodo ) }}
+
+
+    </div>
+</div>
+
+{% endblock %}
