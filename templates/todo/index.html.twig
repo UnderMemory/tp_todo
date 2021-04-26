@@ -47,6 +47,9 @@
                     <a href="{{ path('app_todo_detail', {'id' : todo.id})}}"class="btn btn-outline-info">Voir</a>
                     <a href="{{ path('app_todo_update', {'id' : todo.id})}}"class="btn btn-outline-warning">Editer</a>                  
                 </td>
+                <td>
+                    <a href="{{ path('app_todo_delete', {'id' : todo.id})}}"class="btn btn-danger">Supprimer</a>                  
+                </td>
                 </tr>
     
             </tbody>
