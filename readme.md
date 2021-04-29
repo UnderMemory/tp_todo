@@ -382,3 +382,31 @@ symfony console doctrine:fixtures:load
 
 1. Créer un compte
 2. Installer Heroku cmd line
+    > https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+3. Depuis un terminal : taper : `heroku`
+
+## Créer une application
+1. heroku create
+> Faire un login si besoin
+2. Configurer en mode prod
+
+```bash
+    heroku config:set APP_ENV=prod
+```
+
+3. PostgreSQL
+Dans Heroku, on doit lui dire le SGBD a utiliser. 
+Chez Heroku, on trouve ça dans les addons.
+
+```bash
+# Voir aussi l'interface utilisateur de Heroku
+    heroku addons:create heroku-postgresql:hobby-dev
+```
+
+Après l'install, normalement, il a créé une variable d'environnement DATABASE_URL.
+
+## Déploiement 
+
+```bash
+    git push heroku
+```
