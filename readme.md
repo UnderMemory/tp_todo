@@ -410,3 +410,15 @@ Après l'install, normalement, il a créé une variable d'environnement DATABASE
 ```bash
     git push heroku
 ```
+
+### En cas d'erreurs 
+1. Voir le fichier log
+2. Cas de problème avec composer 
+
+```bash
+# Supprimer composer.lock
+composer install
+# Puis
+git add. , commit, push
+# Et
+git push heroku
