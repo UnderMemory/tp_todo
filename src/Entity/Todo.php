@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 use App\Repository\TodoRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -18,11 +20,14 @@ class Todo
     private $id;
 
     /**
+     * @Assert\NotBlank(message="Ce champ ne peut être vide")
+     * @Assert\Length(min = 15, minMessage = "Au minimum {{ limit }} caractères")
      * @ORM\Column(type="string", length=255)
      */
     private $title;
 
     /**
+     * @Assert\NotBlank(message="Ce champ ne peut être vide")
      * @ORM\Column(type="text")
      */
     private $content;

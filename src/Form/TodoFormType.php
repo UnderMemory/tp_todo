@@ -21,12 +21,14 @@ class TodoFormType extends AbstractType
         $builder
             ->add('title', TextType::class, [
                 'label' => "Un titre en quelque mots",
+                'empty_data' => "",
                 'attr' => [
                     'placeholder' => "entrez le titre ici"
                 ]
             ])
             ->add('content', TextareaType::class, [
                 'label' => 'Mais encore ?',
+                'empty_data' => "",
                 'attr' => [
                     'placeholder' => 'Entrez ici votre mémo'
                 ]
@@ -37,6 +39,7 @@ class TodoFormType extends AbstractType
                 'label' => 'A faire pour :',
                 'years' => ['2021', '2022'],
                 'format' => 'dd MM yyyy',
+               
                 'data' => new \DateTime('now', new \DateTimeZone('Europe/Paris'))
             ]);
         } 
@@ -62,6 +65,9 @@ class TodoFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Todo::class,
+            'attr' => [
+                'novalidate' => 'novalidate'
+            ]
         ]);
     }
 }
